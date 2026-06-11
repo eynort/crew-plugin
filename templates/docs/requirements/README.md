@@ -11,6 +11,8 @@ docs/requirements/
     └── NNN-slug.md           # one requirement; numbering restarts per plan
 ```
 
+**Kind lives in the slug.** Verification work (auditing an area against a spec or quality bar) is `NNN-audit-slug.md` — same template, same lifecycle, the expected deliverable is the findings report. No kind folders, no kind field: the filename is the taxonomy.
+
 ## Lifecycle
 
 ```
@@ -59,7 +61,7 @@ Same semantics as stories, minus functional validation: a requirement is verifie
 |-----------|-----------|---------|----------|--------------|-------|
 | | | | | | |
 
-(Filled by the evaluating agent BEFORE implementation; Started/Finished timestamps recorded during execution.)
+(Filled by the evaluating agent BEFORE implementation; Started/Finished recorded during execution as `YYYY-MM-DD HH:MM -ZZ:ZZ` — format and discipline in [`../AGENTS.md`](../AGENTS.md#estimation-discipline-mandatory).)
 
 ## Changes
 

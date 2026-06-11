@@ -35,6 +35,7 @@ Folder = nature, state = field, files never move. A story/requirement is born `D
 - "How to run npm install" — assume baseline literacy.
 - Per-release notes (use `CHANGELOG.md` only).
 - Implementation details that the reader can get faster by opening the file.
+- End-user manuals inside `docs/guides/` — guides are builder/agent-facing; product docs get their own location (e.g. `docs/product/`).
 
 ## ADR lifecycle
 

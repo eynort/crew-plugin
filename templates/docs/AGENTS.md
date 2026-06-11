@@ -19,13 +19,13 @@ High-level documents for a non-technical sponsor (CEO, CTO, client) to validate 
 
 ### `docs/stories/` — Functional work items
 
-Units of user-observable behavior with acceptance criteria, written by functional analysis (`FA` role). Grouped by feature (`stories/<feature>/NNN-slug.md`). Template, lifecycle, and the embedded estimation table: [`stories/README.md`](stories/README.md).
+Units of user-observable behavior with acceptance criteria, written by functional analysis (`FA` role). Grouped by feature (`stories/<feature>/NNN-slug.md`). Kind lives in the slug — a defect is `NNN-bug-slug.md`; no kind folders, no kind field. Template, lifecycle, and the embedded estimation table: [`stories/README.md`](stories/README.md).
 
 **Not here:** technical decisions (→ `decisions/`), technical work items (→ `requirements/`).
 
 ### `docs/requirements/` — Technical work items
 
-High-level technical work defined by an architect role (`SYS`, `DA`, `INFRA`, ...) that does not pass through functional stories: refactors, infrastructure, platform capabilities, technical debt. Grouped by plan (`requirements/<plan>/NNN-slug.md`). Template and estimation table: [`requirements/README.md`](requirements/README.md).
+High-level technical work defined by an architect role (`SYS`, `DA`, `INFRA`, ...) that does not pass through functional stories: refactors, infrastructure, platform capabilities, technical debt. Grouped by plan (`requirements/<plan>/NNN-slug.md`). Kind lives in the slug — verification work is `NNN-audit-slug.md`; no kind folders, no kind field. Template and estimation table: [`requirements/README.md`](requirements/README.md).
 
 **Not here:** the decision itself (when implementing a requirement produces a decision with trade-offs, that decision is an ADR in `decisions/`; the requirement links it).
 
@@ -40,6 +40,8 @@ Improvement detected during work, with no owner and no date yet. Matures into a 
 ### `docs/guides/` — Living behavior docs
 
 How something cross-cutting works **today**. Updated in the same change that alters the behavior. The delivery process itself is one of these: [`guides/delivery-circuit.md`](guides/delivery-circuit.md).
+
+**Builder/agent-facing only.** End-user or product documentation (user guides, manuals, help content) is outside this standard's scope and must not live here — give it its own location (e.g. `docs/product/` or the product's site) so agents never confuse audience.
 
 ### `docs/work/` — Historical log (evidence, never truth)
 
@@ -56,6 +58,8 @@ When a documentation audit (`DOC` role) finds a divergence and the owner decides
 ## Estimation discipline (mandatory)
 
 Every story and requirement carries an **estimation table** (milestones, estimated human-hours, real start/end timestamps, actual hours). Any agent that evaluates a work item (`UX`, `SYS`, `DA`, or any other) must fill the estimation table **before** implementation starts. The agent that executes records real start/finish per milestone. This is how the team measures the cost of each agentic iteration — do not skip it, do not estimate retroactively.
+
+Timestamps are timezone-stamped: `YYYY-MM-DD HH:MM -ZZ:ZZ`, taken from the clock (`date "+%Y-%m-%d %H:%M %z"`), never reconstructed from memory. Closure with an incomplete table is invalid and hook-enforced.
 
 ## Completeness check (when closing a task)
 

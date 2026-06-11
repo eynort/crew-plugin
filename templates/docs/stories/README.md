@@ -11,6 +11,8 @@ docs/stories/
     └── NNN-slug.md           # one story; numbering restarts per feature
 ```
 
+**Kind lives in the slug.** A defect against existing behavior is `NNN-bug-slug.md` — same template, same lifecycle, the narrative states expected vs. observed. No kind folders, no kind field: the filename is the taxonomy (greppable, visible in listings). An RFC-style idea is not a story kind — it goes to [`../proposals/`](../proposals/README.md) until someone owns it.
+
 ## Lifecycle
 
 ```
@@ -66,7 +68,7 @@ As a (actor), I want (behavior), so that (outcome).
 |-----------|-----------|---------|----------|--------------|-------|
 | | | | | | |
 
-(Filled by the evaluating agent BEFORE implementation; Started/Finished timestamps recorded during execution.)
+(Filled by the evaluating agent BEFORE implementation; Started/Finished recorded during execution as `YYYY-MM-DD HH:MM -ZZ:ZZ` — format and discipline in [`../AGENTS.md`](../AGENTS.md#estimation-discipline-mandatory).)
 
 ## Open questions
 

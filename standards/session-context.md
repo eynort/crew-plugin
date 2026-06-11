@@ -2,9 +2,9 @@
 
 Active in every conversation in this project (injected by the crew plugin). **Precedence: suggestive defaults — the project's own rules (`AGENTS.md`, `.cursor/rules/`, lint configs, `docs/DEVIATIONS.md`) always win; this baseline applies where the project is silent.**
 
-**Delivery:** work items live in the repo — `docs/stories/` (functional, FA) and `docs/requirements/` (technical, architect roles). Folder = nature, state = field, files never move. Specs are read from files, never re-pasted into prompts. Circuit: `docs/guides/delivery-circuit.md`.
+**Delivery:** work items live in the repo — `docs/stories/` (functional, FA) and `docs/requirements/` (technical, architect roles). Folder = nature, state = field, files never move. Kind lives in the slug (`NNN-bug-slug.md`, `NNN-audit-slug.md`) — no kind folders or fields. Decisions are ADRs in `docs/decisions/` with status in the header (Proposed/Accepted/Superseded); a Proposed ADR never lives in a separate folder. Specs are read from files, never re-pasted into prompts. Circuit: `docs/guides/delivery-circuit.md`.
 
-**Estimation:** every story/requirement embeds the table Milestone | Est. hours | Started | Finished | Actual hours | Notes — filled BEFORE implementing, real timestamps during execution. Closing with an incomplete table is invalid.
+**Estimation:** every story/requirement embeds the table Milestone | Est. hours | Started | Finished | Actual hours | Notes — filled BEFORE implementing, real timestamps during execution as `YYYY-MM-DD HH:MM -ZZ:ZZ` (use `date "+%Y-%m-%d %H:%M %z"`, never reconstruct from memory). Closing with an incomplete table is invalid (hook-enforced).
 
 **History:** `docs/work/` entries are immutable and expire on write — evidence of rationale, never a source of current behavior. Load-bearing knowledge gets promoted to `docs/guides/`.
 
