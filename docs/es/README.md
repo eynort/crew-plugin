@@ -31,7 +31,7 @@ El diseño técnico (etapa 3) **no** es un gate obligatorio antes de cada story:
 ## Qué incluye
 
 - **24 subagentes** + **24 slash commands** (`agents/`, `commands/`) — uno por rol; `/crew:<alias>` lanza el subagente correspondiente.
-- **Plantillas** (`templates/`) — `AGENTS.md` (contexto canónico de agentes), un puntero `CLAUDE.md`, `.cursor/rules/`, y la taxonomía completa de `docs/` (stories, requirements, decisions, proposals, el circuito de entrega, historial de work, DEVIATIONS).
+- **Plantillas** (`templates/`) — `AGENTS.md` (contexto canónico de agentes), un puntero `CLAUDE.md`, `standards/` (el núcleo de calidad de código), y la taxonomía completa de `docs/` (stories, requirements, decisions, proposals, el circuito de entrega, historial de work, DEVIATIONS).
 - **Hooks** (`hooks/`) — `SessionStart` inyecta el baseline de sesión; `PreToolUse` protege los artefactos inmutables.
 - **Baseline de sesión** (`standards/session-context.md`) — contexto siempre activo; defaults sugeridos, las reglas propias del proyecto siempre ganan.
 - **Script de bootstrap** (`bin/init-project.sh`) — instala las plantillas en un proyecto nuevo.

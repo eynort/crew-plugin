@@ -1,6 +1,6 @@
 # crew standard — session baseline
 
-Active in every conversation in this project (injected by the crew plugin). **Precedence: suggestive defaults — the project's own rules (`AGENTS.md`, `.cursor/rules/`, lint configs, `docs/DEVIATIONS.md`) always win; this baseline applies where the project is silent.**
+Active in every conversation in this project (injected by the crew plugin). **Precedence: suggestive defaults — the project's own rules (`AGENTS.md`, `standards/`, lint configs, `docs/DEVIATIONS.md`) always win; this baseline applies where the project is silent.**
 
 **Delivery:** work items live in the repo — `docs/stories/` (functional, FA) and `docs/requirements/` (technical, architect roles). Folder = nature, state = field, files never move. Kind lives in the slug (`NNN-bug-slug.md`, `NNN-audit-slug.md`) — no kind folders or fields. Decisions are ADRs in `docs/decisions/` with status in the header (Proposed/Accepted/Superseded); a Proposed ADR never lives in a separate folder. Specs are read from files, never re-pasted into prompts. Circuit: `docs/guides/delivery-circuit.md`.
 
@@ -10,7 +10,7 @@ Active in every conversation in this project (injected by the crew plugin). **Pr
 
 **Document craft (any authored doc — brief, spec, story, guide, README):** a document serves its reader, not its author. Lead with purpose (what problem it solves, why it matters) before any mechanism; segment by audience instead of one file for everyone; keep a short entry point that routes to the detail rather than inlining it all; one canonical place per topic; size to the decision. Complete-but-unnavigable — too long, mis-ordered, the why buried under the how — is a defect, not a finished deliverable. The reader who cannot find or follow it is the test, and a junior must get this by default, not by spotting that it is missing.
 
-**Code quality core (full version: `.cursor/rules/code-quality.mdc`):**
+**Code quality core (full version: `standards/code-quality.md`):**
 - One symbol per file; never two components in one file.
 - Any function passed to any React hook (built-in, library, or custom — the pattern, not a name list) longer than 3 lines → named function in its own file.
 - File ceilings: component 150 / page 200 / hook 80 / service 150 / module 200 / test 250 lines.

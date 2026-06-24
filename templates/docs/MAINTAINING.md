@@ -21,7 +21,7 @@ These rules govern when and how documentation changes. Owned by the `documentati
 | Architectural decision | New ADR in `docs/decisions/` (use `0000-template.md`) |
 | Significant change worth historical record | Entry in `docs/work/YYYY-MM/YYYY-MM-DD-slug.md` |
 | Stack or tooling change | `AGENTS.md § Stack` + an ADR explaining the swap |
-| Convention / rule change | `.cursor/rules/*.mdc` + `AGENTS.md` if it affects activation |
+| Convention / rule change | `standards/*.md` + `AGENTS.md` if it affects activation |
 | Divergence from the crew doc standard, accepted by owner | Row in `docs/DEVIATIONS.md` (only via `DOC` audit) |
 
 ## Work item lifecycle (stories and requirements)

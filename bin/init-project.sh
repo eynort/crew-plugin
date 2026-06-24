@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Scaffold AGENTS.md, CLAUDE.md, .cursor/rules/, and docs/ skeleton into the current project.
+# Scaffold AGENTS.md, CLAUDE.md, standards/, and docs/ skeleton into the current project.
 # Run from the root of an empty (or new) project.
 #
 # Usage:
@@ -19,7 +19,7 @@ fi
 
 echo "Scaffolding into: $TARGET"
 
-mkdir -p "$TARGET/.cursor/rules"
+mkdir -p "$TARGET/standards"
 mkdir -p "$TARGET/docs/briefs"
 mkdir -p "$TARGET/docs/decisions"
 mkdir -p "$TARGET/docs/stories"
@@ -40,9 +40,7 @@ copy_if_absent() {
 
 copy_if_absent "$TEMPLATES/AGENTS.md"                       "$TARGET/AGENTS.md"
 copy_if_absent "$TEMPLATES/CLAUDE.md"                       "$TARGET/CLAUDE.md"
-copy_if_absent "$TEMPLATES/.cursor/rules/general.mdc"       "$TARGET/.cursor/rules/general.mdc"
-copy_if_absent "$TEMPLATES/.cursor/rules/communication.mdc" "$TARGET/.cursor/rules/communication.mdc"
-copy_if_absent "$TEMPLATES/.cursor/rules/code-quality.mdc"  "$TARGET/.cursor/rules/code-quality.mdc"
+copy_if_absent "$TEMPLATES/standards/code-quality.md"      "$TARGET/standards/code-quality.md"
 copy_if_absent "$TEMPLATES/docs/INDEX.md"                   "$TARGET/docs/INDEX.md"
 copy_if_absent "$TEMPLATES/docs/AGENTS.md"                  "$TARGET/docs/AGENTS.md"
 copy_if_absent "$TEMPLATES/docs/MAINTAINING.md"             "$TARGET/docs/MAINTAINING.md"
@@ -56,10 +54,6 @@ copy_if_absent "$TEMPLATES/docs/proposals/README.md"        "$TARGET/docs/propos
 copy_if_absent "$TEMPLATES/docs/guides/delivery-circuit.md" "$TARGET/docs/guides/delivery-circuit.md"
 copy_if_absent "$TEMPLATES/docs/work/README.md"             "$TARGET/docs/work/README.md"
 
-echo
-echo "Stack-specific rule examples available in:"
-echo "  $TEMPLATES/.cursor/rules-stack-examples/"
-echo "Copy the ones you need into .cursor/rules/ and adapt."
 echo
 echo "Next steps:"
 echo "  1. Edit AGENTS.md — replace {PROJECT_NAME}, {STACK}, layout, and commands."

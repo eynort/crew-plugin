@@ -2,22 +2,21 @@
 
 How to invoke the roles, scaffold a new project, and onboard an existing one. For the end-to-end process the roles follow, see the [delivery circuit](../../templates/docs/guides/delivery-circuit.md).
 
-## Bootstrap a new project
+## Set up a new project
 
-From the root of the new (empty) project:
+With the plugin installed, just ask the crew to set it up — no script, no terminal:
 
-```bash
-bash C:/w/crew-plugin/bin/init-project.sh
+```
+set up the crew structure in this project
 ```
 
-This drops in `AGENTS.md`, `CLAUDE.md`, the `.cursor/rules/` baseline, and the full `docs/` taxonomy (stories, requirements, decisions, proposals, guides, work, DEVIATIONS). Existing files are preserved (skipped, not overwritten).
+The `crew-installer` role scaffolds `AGENTS.md`, `CLAUDE.md`, the `standards/` baseline, and the full `docs/` taxonomy (stories, requirements, decisions, briefs, proposals, guides, work, DEVIATIONS). Existing files are kept, never overwritten.
 
 Then:
 
-1. Edit `AGENTS.md` — fill in `{PROJECT_NAME}`, stack table, folder layout, and commands.
+1. Fill in `AGENTS.md` — `{PROJECT_NAME}`, the stack table, folder layout, and commands.
 2. Write `docs/spec.md` with the project's technical spec.
-3. Pick stack-specific rules from `templates/.cursor/rules-stack-examples/` (Tauri+React, Rust, Node sidecar) and copy the relevant ones into `.cursor/rules/`.
-4. [Install the plugin](installation.md) so `/crew:sys`, `/crew:ux`, etc. are available.
+3. Adjust `standards/code-quality.md` if your project's rules differ from the baseline.
 
 ## Onboard an existing project
 

@@ -1,15 +1,38 @@
 # Installation
 
-The plugin id is `crew@factory-crew` (marketplace `factory-crew`, plugin `crew`). Install is configured in your user `settings.json` — **not** via `/plugin marketplace add`, which only registers a path on your own machine.
+You are installing the **crew** plugin from the **factory-crew** marketplace, hosted at the GitHub repo `jircdev/crew-plugin`. Pick whichever method fits — they all end up at the same place.
+
+## Easiest — ask Claude, or run two commands
+
+In Claude (Desktop or CLI) you can ask in plain language:
+
+```
+install the crew plugin: add the GitHub marketplace jircdev/crew-plugin, then install crew@factory-crew
+```
+
+Claude runs it for you. The two commands behind it, if you prefer to run them yourself:
+
+```bash
+claude plugin marketplace add jircdev/crew-plugin
+claude plugin install crew@factory-crew
+```
+
+No JSON to edit. Then restart Claude Code — see [Restart and verify](#restart-and-verify).
+
+## Claude Desktop (point-and-click)
+
+In the Claude desktop app, open the plugin manager (**Customize → Plugins**), add the marketplace from the repository `jircdev/crew-plugin`, then find **crew** under Browse and click **Install**. This is the most non-technical path; full walkthrough in the [official guide](https://support.claude.com/en/articles/13837440-use-plugins-in-claude).
+
+## Advanced — pin it in `settings.json` (teams, reproducible setup)
+
+Declaring the plugin in your user `settings.json` makes the install reproducible and easy to share. The file lives at:
 
 - macOS/Linux: `~/.claude/settings.json`
 - Windows: `C:\Users\<user>\.claude\settings.json`
 
-You declare the marketplace under `extraKnownMarketplaces` and enable the plugin under `enabledPlugins`. Pick **one** of the two flows below.
+> **Editing `settings.json` by hand?** Add the two keys below to the file that is already there — do not replace the whole file. Keep the JSON valid: every `{` needs its matching `}`, and no comma after the last item in a block. One stray comma stops the file from loading and the plugin will not appear.
 
-> **Editing `settings.json` by hand?** Add these two keys to the file that is already there — do not replace the whole file. Keep the JSON valid: every `{` needs its matching `}`, and no comma after the last item in a block. One stray comma stops the file from loading and the plugin will not appear.
-
-## Consumer (recommended — installs from GitHub)
+### From GitHub (any machine)
 
 For anyone using the plugin without editing it. Resolves on any machine.
 
@@ -29,9 +52,9 @@ For anyone using the plugin without editing it. Resolves on any machine.
 }
 ```
 
-## Author / local development (edits the working tree)
+### From a local clone (plugin authors)
 
-For maintainers who edit the plugin and want their local clone to be the live source. Identical to the consumer config except the marketplace `source` points at the clone path — so it resolves **only** on your machine.
+For maintainers who edit the plugin and want their local clone to be the live source. Identical to the GitHub config except the marketplace `source` points at the clone path — so it resolves **only** on your machine.
 
 ```json
 {

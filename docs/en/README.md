@@ -31,7 +31,7 @@ Technical design (stage 3) is **not** a mandatory gate before every story — de
 ## What's inside
 
 - **24 subagents** + **24 slash commands** (`agents/`, `commands/`) — one per role; `/crew:<alias>` spawns the matching subagent.
-- **Templates** (`templates/`) — `AGENTS.md` (canonical agent context), a `CLAUDE.md` pointer, `.cursor/rules/`, and the full `docs/` taxonomy (stories, requirements, decisions, proposals, the delivery circuit, work history, DEVIATIONS).
+- **Templates** (`templates/`) — `AGENTS.md` (canonical agent context), a `CLAUDE.md` pointer, `standards/` (the code-quality core), and the full `docs/` taxonomy (stories, requirements, decisions, proposals, the delivery circuit, work history, DEVIATIONS).
 - **Hooks** (`hooks/`) — `SessionStart` injects the session baseline; `PreToolUse` guards immutable artifacts.
 - **Session baseline** (`standards/session-context.md`) — always-on context; suggestive defaults, the project's own rules always win.
 - **Bootstrap script** (`bin/init-project.sh`) — scaffolds the templates into a new project.

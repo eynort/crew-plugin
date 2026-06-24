@@ -2,22 +2,21 @@
 
 Cómo invocar los roles, hacer scaffolding de un proyecto nuevo y onboarding de uno existente. Para el proceso de punta a punta que siguen los roles, ver el [circuito de entrega](../../templates/docs/guides/delivery-circuit.es.md).
 
-## Bootstrap de un proyecto nuevo
+## Configurar un proyecto nuevo
 
-Desde la raíz del proyecto nuevo (vacío):
+Con el plugin instalado, solo pídele a la crew que lo configure — sin script, sin terminal:
 
-```bash
-bash C:/w/crew-plugin/bin/init-project.sh
+```
+configura la estructura de la crew en este proyecto
 ```
 
-Esto deja `AGENTS.md`, `CLAUDE.md`, el baseline de `.cursor/rules/` y la taxonomía completa de `docs/` (stories, requirements, decisions, proposals, guides, work, DEVIATIONS). Los archivos existentes se preservan (se saltan, no se sobrescriben).
+El rol `crew-installer` instala `AGENTS.md`, `CLAUDE.md`, el baseline de `standards/` y la taxonomía completa de `docs/` (stories, requirements, decisions, briefs, proposals, guides, work, DEVIATIONS). Los archivos existentes se conservan, nunca se sobrescriben.
 
 Luego:
 
-1. Edita `AGENTS.md` — rellena `{PROJECT_NAME}`, la tabla de stack, el layout de carpetas y los comandos.
+1. Rellena `AGENTS.md` — `{PROJECT_NAME}`, la tabla de stack, el layout de carpetas y los comandos.
 2. Escribe `docs/spec.md` con la especificación técnica del proyecto.
-3. Elige reglas específicas del stack en `templates/.cursor/rules-stack-examples/` (Tauri+React, Rust, Node sidecar) y copia las relevantes a `.cursor/rules/`.
-4. [Instala el plugin](installation.md) para que `/crew:sys`, `/crew:ux`, etc. estén disponibles.
+3. Ajusta `standards/code-quality.md` si las reglas de tu proyecto difieren del baseline.
 
 ## Onboarding de un proyecto existente
 

@@ -4,11 +4,11 @@ Mandatory for all AI agents (Claude Code, Cursor, Copilot, Codex, Windsurf, etc.
 
 ## Interoperability contract
 
-**This file is the canonical agent context** — the single base every tool consumes. It follows the [AGENTS.md open standard](https://agents.md) (Linux Foundation), read natively by Codex, Cursor, Copilot, Windsurf, Devin and others. `CLAUDE.md` is a pointer that imports this file (`@AGENTS.md`) for Claude Code — never write rules there; content outside this file is invisible to other tools and drifts. Nested `AGENTS.md` files (per package/app) may extend this one; the nearest file to the edited code wins on conflict. Tool-specific extensions (`.cursor/rules/`, hooks) refine but never contradict this file.
+**This file is the canonical agent context** — the single base every tool consumes. It follows the [AGENTS.md open standard](https://agents.md) (Linux Foundation), read natively by Codex, Cursor, Copilot, Windsurf, Devin and others. `CLAUDE.md` is a pointer that imports this file (`@AGENTS.md`) for Claude Code — never write rules there; content outside this file is invisible to other tools and drifts. Nested `AGENTS.md` files (per package/app) may extend this one; the nearest file to the edited code wins on conflict. Tool-specific extensions (hooks, editor configs) refine but never contradict this file.
 
 ## Rule precedence
 
-1. This file and the project's own rules (nested `AGENTS.md`, `.cursor/rules/`, lint configs) — **always win**.
+1. This file and the project's own rules (nested `AGENTS.md`, `standards/`, lint configs) — **always win**.
 2. `docs/DEVIATIONS.md` — recorded, intentional divergences from the crew plugin standard.
 3. The crew plugin baseline (taxonomy, delivery circuit, quality core) — **suggestive defaults** that apply where the project is silent.
 
@@ -38,7 +38,7 @@ Locked decisions (no re-discuss): {list — e.g. "no Electron, no Redux, no Grap
 
 ## Code quality rules (MANDATORY)
 
-Canonical source: [`.cursor/rules/code-quality.mdc`](.cursor/rules/code-quality.mdc). Summary:
+Canonical source: [`standards/code-quality.md`](standards/code-quality.md). Summary:
 
 - One symbol per file (one class / component / hook / Rust struct+impl).
 - File size limits — component 150, page 200, hook 80, slice 150, Rust 300, sidecar tool 120.
@@ -71,7 +71,7 @@ Hard-enforced via Biome + linter. Refuse to write violating code; refactor inste
 | `docs/decisions/` | ADRs |
 | `docs/MAINTAINING.md` | Doc lifecycle rules |
 | `work/` | Historical change log (immutable) |
-| `.cursor/rules/` | Always-applied rules |
+| `standards/` | Code-quality core + project rules |
 
 ## Communication (MANDATORY)
 
@@ -88,7 +88,7 @@ Two response modes:
 - **Guide** — implementation tasks: conceptual, point to files and patterns.
 - **Documentation** — informational questions: respond as the source of truth, direct voice. Structure: answer → example → `Fuente: path`. Default Level 1 (config/usage); Level 2 only when asked.
 
-Canonical: [`.cursor/rules/communication.mdc`](.cursor/rules/communication.mdc).
+This section is the canonical communication standard for the project.
 
 ## Role activation (MANDATORY)
 
@@ -184,7 +184,7 @@ If a role is unmapped, the agent asks once and records the answer here — the q
 
 - Read this file first.
 - Honor the **Role activation** protocol when a message is prefixed with an alias.
-- Respect file size and one-symbol-per-file limits in `.cursor/rules/code-quality.mdc`. Refuse to write violating code; refactor instead.
+- Respect file size and one-symbol-per-file limits in `standards/code-quality.md`. Refuse to write violating code; refactor instead.
 - For any architectural decision, emit an ADR in `docs/decisions/` before implementation.
 - Update docs in the same change as code when behavior changes (see `docs/MAINTAINING.md`).
 - Follow the delivery circuit (`docs/guides/delivery-circuit.md`): work items live in `docs/stories/` (functional) and `docs/requirements/` (technical); specs are read from files, never re-pasted into prompts.

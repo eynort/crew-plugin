@@ -1,9 +1,6 @@
----
-alwaysApply: true
----
 # Code Quality Rules — universal core
 
-Stack-agnostic baseline, owned by the `crew` plugin. **Precedence: these rules are suggestive defaults — if the project defines its own quality rules (in `AGENTS.md`, `.cursor/rules/`, lint configs, or docs), the project's rules win.** The initial `DOC` audit is where the developer resolves plugin-vs-project conflicts; the resolution is written into the project's root `AGENTS.md` and differences are recorded in `docs/DEVIATIONS.md`. Where the project is silent, this baseline applies. Refuse to generate violating code — refactor instead.
+Stack-agnostic baseline, owned by the `crew` plugin. **Precedence: these rules are suggestive defaults — if the project defines its own quality rules (in `AGENTS.md`, lint configs, or docs), the project's rules win.** The initial `DOC` audit is where the developer resolves plugin-vs-project conflicts; the resolution is written into the project's root `AGENTS.md` and differences are recorded in `docs/DEVIATIONS.md`. Where the project is silent, this baseline applies. Refuse to generate violating code — refactor instead.
 
 ## One symbol per file
 

@@ -35,7 +35,7 @@ Yes:
 - A constraint that affects multiple modules.
 
 No:
-- Trivial choices (file naming, formatter config) — those go in `.cursor/rules/`.
+- Trivial choices (file naming, formatter config) — those go in `standards/`.
 - Pure implementation details — those belong next to the code.
 - Tutorials — those belong in `docs/guides/`.
 
