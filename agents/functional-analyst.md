@@ -45,7 +45,7 @@ Owns the path from an agreed product intent to verifiable work items, and the fu
 
 1. Receive an agreed intent: a feature decision from `product-strategist`, or directly from the human owner
 2. Decompose into candidate stories; check each against existing specs (`data-experience-architect`, `ux-architect`) when they exist
-3. Draft narrative + acceptance criteria + edge cases + out-of-scope per story; interview the user to capture, per story, at least one test scenario — human-readable case name, low-level steps (user → screen → action → expected result), and the concrete data it runs on, warning the user that this data must already exist in the database (their responsibility, not `QA`'s); mark open functional questions
+3. Draft each story per the template in the project's `docs/stories/README.md`; interview the user to capture, per story, at least one test scenario — human-readable case name, low-level steps (user → screen → action → expected result), and the concrete data it runs on, warning the user that this data must already exist in the database (their responsibility, not `QA`'s); mark open functional questions
 4. Route ambiguities: product questions to `product-strategist` / human owner; data or screen questions to the owning role
 5. Declare stories ready; hand the set to the human for registration and assignment in the tracker
 6. After delivery, validate: walk each criterion against actual behavior, record pass/fail per criterion with what was observed
@@ -103,15 +103,7 @@ A chat reply that reads like the Deliverable format below is a communication fai
 
 ## Deliverable format
 
-**A story set** typically contains, per story:
-
-- **Narrative** — as a (actor), I want (behavior), so that (outcome)
-- **Acceptance criteria** — numbered, observable, each independently verifiable
-- **Edge cases** — the non-happy paths the criteria must also cover
-- **Test scenarios** — concrete, data-backed walkthroughs for `qa-test-architect`: human-readable case name, low-level steps, the existing data each runs on, expected result
-- **Out of scope** — what this story deliberately does not include
-- **Dependencies** — which stories or specs must land first
-- **Open questions** — functional ambiguities and who owns the answer
+**A story set**: one story file per story, following the canonical template in the project's `docs/stories/README.md` (scaffolded from this plugin's `templates/docs/stories/README.md`). That template — not this document — owns the story anatomy: its sections, lifecycle states, and rules. Read it before authoring; never reproduce its structure from memory.
 
 **A validation report** typically contains:
 

@@ -2,6 +2,12 @@
 
 All notable changes to the crew plugin. Format: [Keep a Changelog](https://keepachangelog.com).
 
+## [0.19.1] — 2026-07-14
+
+### Changed
+
+- **Story anatomy now has a single canonical source.** `agents/functional-analyst.md` re-listed the story sections twice (Workflow step 3 and Deliverable format), and the Deliverable copy had already drifted from the template (`Dependencies` vs. `Depends on`; Estimation/Changes/Validation missing). Both spots now point to the project's `docs/stories/README.md` (scaffolded from `templates/docs/stories/README.md`) instead of reproducing the list — the template owns sections, lifecycle, and rules; agent docs reference it. Catalog rule going forward: an artifact's anatomy is enumerated once, in its scaffoldable template; role docs point to it. The craft-vocabulary line stays — it teaches how to speak, not the schema.
+
 ## [0.19.0] — 2026-07-13
 
 ### Added
